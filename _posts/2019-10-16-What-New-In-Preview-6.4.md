@@ -18,7 +18,7 @@ We released Gradient Preview 6.4 on Oct 15, 2019. It brings several new features
 hosted for free by Microsoft Azure
 - preview expiration: extended to March 2020
 
-![F# Notebook Screenshot](/images/NotebookScreenshot.png)
+[![F# Notebook Screenshot](/images/NotebookScreenshot.png)](https://notebooks.azure.com/lost/projects/gradient-samples/html/FashionMNIST.ipynb)
 
 <!--more-->
 
@@ -153,7 +153,7 @@ training a deep convolutional network, and consuming it from a cross-platform C#
 
 The network detects programming language from a code fragment.
 
-![Not C# app screenshot](/images/NotCSharp-Parts.png)
+[![Not C# app screenshot](/images/NotCSharp-Parts.png)](https://lostmsu.github.io/Not-CSharp/)
 
 Full description of the sample is in a separate [blog post](https://lostmsu.github.io/Not-CSharp/).
 
@@ -166,7 +166,7 @@ allows training and running models for free in a Jupyter environment provided by
 in the browser. (**Clone** if you wish to edit it;
 it will also enable syntax highlighting and autocomplete)
 
-![F# Notebook Screenshot](/images/NotebookScreenshot.png)
+[![F# Notebook Screenshot](/images/NotebookScreenshot.png)](https://notebooks.azure.com/lost/projects/gradient-samples/html/FashionMNIST.ipynb)
 
 ## Conclusion
 
