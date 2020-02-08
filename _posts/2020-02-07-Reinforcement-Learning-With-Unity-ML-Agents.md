@@ -247,18 +247,31 @@ All the targets and optimizers are [defined here](https://github.com/losttech/Gr
 
 ## What's next
 
+### Deal with wiggling
+
+The bot trained using this sample shakes a lot. You can try to tweak training to minimize that.
+This would be a good first exercise with a visible impact.
+
+### TensorBoard and saving model
+
 Our sample currently lacks any logging for TensorBoard, and saving the actual model,
 which we leave as an exercise for our readers. There is [sample code](https://github.com/losttech/Gradient-Samples/blob/b8bba77d3a2712bbe66846df77d2726ef570f475/GPT-2/Gpt2Trainer.cs#L75) doing it in another
 sample, [GPT-2](https://github.com/losttech/Gradient-Samples/tree/master/GPT-2).
 
-Try other Unity ML Agents environments, and see how actor-critic will perform there.
-You might need to tweak observation and action processing for that.
+### Keras APIs
 
 The sample is written in TensorFlow 1.0 API style. Gradient supports TensorFlow 1.15,
 which has newer Keras APIs. Try converting the old style code into the [new style](https://www.tensorflow.org/guide/keras).
 
+### Try on other environments
+
+Try other Unity ML Agents environments, and see how actor-critic will perform there.
+You might need to tweak observation and action processing for that.
+
 To use the trained model for an actual bot in a Unity game, please, refer to
 [their documentation](https://github.com/Unity-Technologies/ml-agents/issues/1825).
+
+### Tips for other tasks
 
 If you want to start working on more complicated tasks, like autonomous driving, here are a few hints you can start with:
 
