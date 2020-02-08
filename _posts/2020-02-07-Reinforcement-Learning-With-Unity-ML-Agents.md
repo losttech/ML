@@ -110,7 +110,7 @@ There are 2 main classes, that are used in our bot to interact with Unity:
 
 **UnityEnvironment** establishes connection to Unity, and allows you to control the game:  
 `Reset()` - restarts the game  
-`Step()` - advances game one tick at a time  
+`Step()` - advances the game one tick at a time  
 `GetStepResult(string? agentGroupName): BatchedStepResult` - returns what an agent group
 "saw" during the last step  
 `SetActions(string? agentGroupName, ndarray actions)` - lets bot decide what it will do
@@ -272,6 +272,6 @@ This will require diving deeper into [TensorFlow Documentation](https://www.tens
 
 ## Conclusion
 
-Check out our [cool products for developers](https://losttech.software/).
+Check out our [cool products for developers](https://losttech.software/stack.html).
 
 [See more of our C# Deep Learning Samples](https://github.com/losttech/Gradient-Samples)! Until the next time!
