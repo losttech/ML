@@ -6,9 +6,10 @@ excerpt_separator: <!--more-->
 ---
 
 Today **LostTech.TensorFlow**, our C# binding to TensorFlow, gets its first Release
-Candidate available to public. It brings a stable API based on TensorFlow 1.15, that includes
-tensors, graphs, and sessions, along with Keras and an optional
-[eager execution mode](https://www.tensorflow.org/guide/eager), and much more.
+Candidate available to the public. It brings a stable API, that mirrors TensorFlow 1.15,
+and includes tensors, graphs, and sessions, along with Keras, an optional
+[eager execution mode](https://www.tensorflow.org/guide/eager),
+and [much more](https://losttech.software/gradient.html).
 
 Check out [the product webpage](https://losttech.software/gradient.html) for the
 [overview of available features](https://losttech.software/gradient.html).
@@ -17,12 +18,13 @@ install the [NuGet package](https://nuget.org/packages/LostTech.TensorFlow) and 
 into deep learning with .NET!
 
 This Release Candidate comes with a go-live license, meaning unlike the previews, it has no
-expiration date.
+expiration date and is fully supported.
 
-This release is completely free for individuals and small businesses, while
-larger enterprises can get a pay-as-you-go license through their Azure Subscription, which includes
-some trial credits. Please, contact [Sales](https://losttech.software/buy_gradient.html) if you
-need an offline license.
+**LostTech.TensorFlow** is completely free for individuals and small businesses, while
+larger enterprises can get a [pay-as-you-go license](#pay-as-you-go-via-azure) through their Azure
+Subscription, which includes some trial credits. Please, contact
+[Sales](https://losttech.software/buy_gradient.html) if you need the license for disconnected use
+cases.
 
 <!--more-->
 
@@ -32,11 +34,11 @@ need an offline license.
 
 ## Why LostTech.TensorFlow
 
-### Full power
+### Full deep learning power
 
 To this date [people _struggle_ to implement](https://github.com/SciSharp/TensorFlow.NET/issues/352)
 state of the art algorithms for **computer vision (YOLOv3)** and
-**language processing (GPT and BERT)** using **TensorFlow.NET** due to the
+**language processing (GPT and BERT)** using **TensorFlow.NET**, our competitor, due to the
 *lack of required features*.
 
 In comparison, our [**GPT-2 demo**](https://habr.com/post/453232/) was **made in one week** just
@@ -55,8 +57,8 @@ We are leaving the full comparison to reviewers, but in
 official sample, **LostTech.TensorFlow** came about **18% faster** to train a convolutional neural
 network.
 
-The use of official **TensorFlow** builds with **LostTech.TensorFlow** enables you to take advantage
-not only of **NVidia GPUs**, but also of **AMD accelerators** using
+The use of the official **TensorFlow** builds with **LostTech.TensorFlow** enables you to take
+advantage not only of **NVidia GPUs**, but also of **AMD accelerators** using
 [tensorflow-rocm](https://pypi.org/project/tensorflow-rocm/1.15.4/),
 and **Tensor Processing Units** in Google Cloud.
 
@@ -64,12 +66,16 @@ and **Tensor Processing Units** in Google Cloud.
 
 ### Integration with Unity ML Agents
 
-**LostTech.TensorFlow** includes support for interacting with virtual environments
-built using [**Unity ML Agents**](https://github.com/Unity-Technologies/ml-agents).
+**LostTech.TensorFlow** includes support for interaction with virtual environments
+built with [**Unity ML Agents**](https://github.com/Unity-Technologies/ml-agents).
 
 This allows to train deep learning models using .NET in detailed simulated environments,
 that can be transferred to power real-life robots. This also opens an opportunity to expand
 in-game AI characters with human-like features.
+
+Check out our [blog post](https://ml.blogs.losttech.software/Reinforcement-Learning-With-Unity-ML-Agents/),
+that covers building and training an agent in a virtual Unity environment using deep reinforcement
+learning.
 
 ![Trained bot playing 3DBall](/images/3DBall-Trained.gif)
 
@@ -81,3 +87,84 @@ APIs.
 
 ## What's new in this release
 
+### New features and bug fixes
+
+This section describes changes since the Preview 7 released in Q1 2020. To view a summary of
+change history prior to Preview 7, check out
+[the Release Notes section of the package](https://www.nuget.org/packages/Gradient/).
+
+#### Static types has been made more precise
+
+- Most used APIs are now better typed. Nearly all methods in `tf` that previously returned `dynamic`
+now correctly return `Tensor` objects.
+- Introduced `Tensor<T>`, that improves interoperability with generic code.
+- `ndarray<T>` has been improved.
+
+#### Easier debugging
+
+- Improved exception handling experience. Most scenarios now throw subclasses of .NET `Exception`
+rather than a generic `PythonException` error. Full TensorFlow stack trace is included.
+- Core components now include debug symbols.
+- The Python interop library package comes with
+[Source Link](https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/sourcelink)
+enabled giving an easy access to
+[its source code](https://github.com/losttech/pythonnet) from IDE.
+
+#### Easy to get started
+
+- By default 1D .NET arrays and LINQ-produced enumerables are automatically converted to
+Python lists to simplify interaction with badly-written parts of TensorFlow. This feature can
+be disabled using properties of [corresponding codecs](https://gradient.docs.losttech.software/Runtime/v0.4.2/LostTech.Gradient.Codecs/index.htm).
+
+### Closer to the RTM
+
+#### Pay-As-You-Go via Azure
+
+**Pay-As-You-Go** is a novel licensing method, that should help you get started quickly and only
+pay for **LostTech.TensorFlow** when you are actually using it.
+
+If you have an existing Azure Subscription, you can get a key through it. **The key can be used on any
+Internet-connected machine** (intermittent connectivity issues are well-tolerated),
+**including machines outside of Azure fabric, such as company workstations**.
+Our licensing library will record the time
+the process is running along with the information about the host hardware, and
+**charge your Azure Subscription** accordingly.
+
+The offer includes about **48 free hours per month of training/inference** on a typical workstation.
+
+![Azure Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Microsoft_Azure_Logo.svg/300px-Microsoft_Azure_Logo.svg.png)
+
+#### Stable API
+
+Starting with Release Candidate, future versions of **LostTech.TensorFlow** will adhere to
+[SemVer](https://semver.org/), meaning that the code written with older version will be compatible
+with any future updates up until 2.0 is released.
+
+#### Go-live
+
+The Release Candidate has no expiration date, and comes with a license, that permits commercial use.
+However, you will have to upgrade to the final release once it is out to continue receiving support.
+
+#### New package name: LostTech.TensorFlow
+
+For clarity, we changed the name of the NuGet package to
+[**LostTech.TensorFlow**](https://www.nuget.org/packages/LostTech.TensorFlow).
+[**Gradient**](https://www.nuget.org/packages/Gradient) package will be marked obsolete and should
+not be used.
+
+## Conclusion
+
+**LostTech.TensorFlow** is a powerful deep learning library for .NET, that can be used to build
+state of the art algorithms with just a few lines of code on your platform of choice
+without the need to leave the familiar tech stack.
+
+[Grab it now](https://losttech.software/buy_gradient.html) from our website, and
+[get started with samples](https://github.com/losttech/Gradient-Samples/).
+
+## Credits
+
+TensorFlow, the TensorFlow logo and any related marks are trademarks of Google Inc.
+
+Azure is a trademark of Microsoft Corporation.
+
+Lost Tech LLC is thankful to Google developers for creating an excelled deep learning library.
