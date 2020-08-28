@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Reinforcement Learning with Unity ML Agents
-categories: gradient samples RL unity DeepMind ml-agents
+categories: gradient tensorflow samples RL unity DeepMind ml-agents
 excerpt_separator: <!--more-->
 ---
 

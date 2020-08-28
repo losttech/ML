@@ -6,13 +6,23 @@ layout: default
   {% for post in site.posts %}
     <article class="post">
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+      <h1>
+        {% if post.external_url %}
+        <a href="{{ post.external_url }}">{{ post.title }}</a>
+        {% else %}
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        {% endif %}
+      </h1>
 
       <div class="entry">
         {{ post.excerpt }}
       </div>
 
+      {% if post.external_url %}
+      <a href="{{ post.external_url }}" class="read-more">Read More</a>
+      {% else %}
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+      {% endif %}
     </article>
   {% endfor %}
 </div>

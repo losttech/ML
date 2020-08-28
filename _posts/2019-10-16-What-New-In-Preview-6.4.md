@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What's New in Gradient Preview 6.4?
-categories: gradient whats-new
+categories: gradient tensorflow whats-new
 excerpt_separator: <!--more-->
 ---
 

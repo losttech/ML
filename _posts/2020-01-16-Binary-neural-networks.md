@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Binary neural networks in Gradient
-categories: gradient whats-new binary bitwise
+title: Binary neural networks in LostTech.TensorFlow
+categories: gradient tensorflow whats-new binary bitwise
 excerpt_separator: <!--more-->
 ---
 
